@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Clean India App</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  </head>
+  <body class="is-loading">
+    <!-- Wrapper -->
+      <div id="wrapper">
+              <!-- Main -->
+          <section class="main">
+            <header>
+              <span class="avatar"><img src="img/profile.png" style="height:100px;width:100px" alt="" /></span>
+              <h1 style="margin-top: 1%">LOG IN</h1>
+              <hr>
+            </header>
+
+             <form id='loginform'>
+            <input type="email" name="email" id="email" placeholder="Email" style="margin-bottom:10px;" />
+            <input type="password" name="password" id="passwordconf" placeholder="Password" style="margin-bottom:10px;"/>
+            <input type="submit" value="LOG IN" id="loginbutton" style="margin-bottom:10px;">
+            <p class="msg"></p>
+          </form>
+
+          </section>
+
+
+      </div>
+
+    <!-- Scripts -->
+      <!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+      <!-- <script>
+        if ('addEventListener' in window) {
+          window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+          document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+        }
+      </script> -->
+      <script type="text/javascript" src="/javascript/jquery.js"></script>
+      <script type="text/javascript" src="/javascript/loginf.js"></script>
+  </body>
+</html>

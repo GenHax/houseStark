@@ -1,0 +1,41 @@
+{
+  "name": "nodesite",
+  "version": "1.0.0",
+  "description": "learnin nodeapp",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node",
+    "npm"
+  ],
+  "author": "Anisha Swain",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.1",
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "express-ejs-layouts": "^2.2.0",
+    "express-formidable": "^1.0.0",
+    "express-session": "^1.14.2",
+    "formidable": "^1.0.17",
+    "fs": "0.0.2",
+    "mongoose": "^4.6.8",
+    "multer": "^1.2.1",
+    "nodemon": "^1.11.0",
+    "pre": "^0.1.3",
+    "serve-index": "^1.8.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anisha1234/nodesite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Anisha1234/nodesite/issues"
+  },
+  "homepage": "https://github.com/Anisha1234/nodesite#readme"
+}
