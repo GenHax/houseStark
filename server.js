@@ -28,6 +28,7 @@ var post = require('./app/post');
 var leaderboard =require('./app/leaderboard');
 var issues =require('./app/issues');
 var report = require('./app/report');
+var instruction = require('./app/instruction');
 
 
 //set static files(css or js or imgs)
@@ -58,6 +59,7 @@ app.use('/post',post);
 app.use('/leaderboard',leaderboard);
 app.use('/issues',issues);
 app.use('/report',report);
+app.use('/instruction',instruction);
 
 //start your server
 app.listen(port,function(){
