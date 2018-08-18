@@ -28,7 +28,8 @@ router.get('/', auth, function(req, res, next) {
         Post.find({
           author: user._id.toString()
         }, function(err, posts) {
-
+          console.log(posts)
+          console.log(user)
           var render_data = {
             title: "Clean India",
             name: user.name,

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -129,14 +129,52 @@
                               <h4 class="description">STAKE-HOLDERS : <small style="text-transform: capitalize;"><%= post.stake_holders %></small></h4>
                               <h5>LOCATION : <small style="text-transform: capitalize;"><%= post.location%></small></h5>
                               <h5>LIKES : <small id="like-count<%= post._id %>"><%= post.likes.length %></small><small class="text-muted" style="float:right;"><%= post.date %></small></h5>
-                              <% if(post.likes.indexOf(current_userid)>=0) { %>
-                                <a id="like<%= post._id %>" title="unlike" class="like" onclick="<%=postid_remove%>"><i class="fa fa-heart fa-2x " style="color:green;"></i></a>
+                                
+
+                                <% if(post.sale=="1" && post.use == "0") {%>
+                                  <h5>Contact : <span style="text-transform: capitalize;"><%= post.contact%></span></h5>
+                                 <i class="fa fa-cart-plus fa-3x " style="color:green;margin-left: 0%"></i>
+                                 <i class="fa fa-times fa-3x " style="color:orange;margin-left:25%;margin-right: 25%"></i>
+                                 <%}%>
+
+                                 <% if(post.use=="1" && post.sale == "0" ) {%>
+                                 <i class="fa fa-times fa-3x " style="color:orange;margin-left: 0%"></i>
+                                 <i class="fa fa-user fa-3x " style="color:yellow;margin-left:25%;margin-right: 25%"></i>
+                                 <%}%>
+
+                                  <% if(post.use=="1" && post.sale == "1" ) {%>
+                                <h5>Contact : <span style="text-transform: capitalize;"><%= post.contact%></span></h5>
+                                 <i class="fa fa-cart-plus fa-3x " style="color:green;margin-left: 0%"></i>
+                                 <i class="fa fa-user fa-3x " style="color:yellow;margin-left:25%;margin-right: 25%"></i>
+                                 <%}%>
+
+                                
+
+                                 <% if(post.likes.indexOf(current_userid)>=0) { %>
+                                  <a id="like<%= post._id %>" title="unlike" class="like" onclick="<%=postid_remove%>"><i class="fa fa-heart fa-2x " style="color:green;"></i></a>
                                 <% }else { %>
                                   <a id="like<%= post._id %>"  title="like" class="like" onclick="<%=postid_add%>"><i class="fa fa-heart fa-2x" style="color:red;"></i></a>
-                                  <% } %>
-                                <a style="margin-left:60%" title="tweet" target="_blank" class="twitter-share-button" href="https://twitter.com/intent/tweet?text=<%= post.description %>"data-size="large"><i class="fa fa-twitter fa-3x" style="color:#03a9f4" aria-hidden="true"></i></a>
+                                <% } %>
 
-                                <!-- <a href="/report"><i class="fa fa-2x fa-exclamation-circle" style="float: right;margin-top:2%;color: red" aria-hidden="true"></i></a> -->
+                                <br><br><a title="tweet" target="_blank" class="twitter-share-button" href="https://twitter.com/intent/tweet?text=<%= post.description %>"data-size="large"><i class="fa fa-twitter fa-3x" style="color:#03a9f4" aria-hidden="true"></i></a>
+
+                                <% if(post.waste == "renewable" ) {%>
+                                  <i class="fa fa-recycle fa-3x " style="color:green;margin-left:20%"></i>
+                                 <span>Type of waste: renewable</span>
+                                 <%}%>
+
+                                  <% if(post.waste == "organic" ) {%>
+                                  <i class="fa fa-pagelines fa-3x " style="color:green;margin-left:20%"></i>
+                                 <span>Type of waste: Organic</span>
+                                 <%}%>
+
+                                 <% if(post.waste == "toxic" ) {%>
+                                  <i class="fa fa-exclamation-circle fa-2x " style="color:red;margin-left:20%"></i>
+                                 <span>Type of waste: Toxic</span>
+                                 <%}%>
+          
+
+                                <a href="/report"><i class="fa fa-2x fa-exclamation-circle" style="float: right;   ;color: red" aria-hidden="true"></i></a>
 
                       </div>
                     </div>

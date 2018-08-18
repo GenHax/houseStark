@@ -115,6 +115,31 @@
           <!-- <option value=" Solved Challenge">Solved Challenge</option> -->
         </select>
       </div>
+      <div class="select-wrapper field" style="margin-bottom:15px;">
+        <label for=""></label>Type of waste:</label>
+          <select name="type_waste" id="type_waste" name="type_waste">
+            <option value="organic">organic </option>
+            <option value="toxic">toxic</option>
+            <option value="renewal">renewal</option>
+          </select>
+      </div>
+      <div>
+            <label for=""></label>Are you going to use this waste?</label>
+            <select name="use" id="use" name="use">
+            <option value="0">No </option>
+            <option value="1">Yes</option>
+          </select>
+      </div>
+      <div>
+            <label for=""></label>Do you want to sale it?</label>
+            <select name="sale" id="sale" name="sale">
+            <option value="0">No </option>
+            <option value="1">Yes</option>
+          </select>
+      </div>
+      <div id="saleInfo">
+          
+      </div>
       <input type="file" name="images" value="" multiple="true">
       <!-- <input type="submit" name="submit" value="Submit"> -->
       <button id="postbtn" type="submit" name="submit" value="Submit">post</button>
@@ -135,7 +160,7 @@
                  var n = $(document.getElementById('postbtn'))
                   var s = document.URL
                   var data = new FormData($(this)[0]);
-                  console.log(data);
+                  console.log("THIS Is DATA" + data);
                 $.ajax({
                     url : '/post/create',
                     method:'POST',
@@ -165,6 +190,25 @@
                     }
                   });
              });
+             $("#use").on("change", function() {
+                 if($(this).val()==1){
+                  if($("#type_waste").val()=="organic"){
+                     alert("Organic wastes are those wastes that are biodegradable. They mainly come from plants or animals. They mainly consists of plants or animals waste products like kitchen waste, leaves, vegetables, animal dung, timber, fruits and leaves, paper bags, food waste. They can be used to make fertiliser.");
+                   }
+                   else if($("#type_waste").val()=="toxic"){
+                     alert("Toxic waste is any unwanted material in all forms that can cause harm. Many of today’s household products like pesticides, paints, medicines, sprays, batteries,bulbs contain toxic chemicals that can pollute the air and contaminate soil and water. These wastes must be separated and stored, as they cannot be destroyed.The method of storage will seek to immobilize the toxic components of the waste, possibly through storage in sealed containers, inclusion in a stable medium such as glass or a cement mixture, or burial under an impermeable clay cap.");
+                   }
+                   else if($("#type_waste").val()=="renewal"){
+                     alert("These are the waste products that can be processed and reused. They mainly consist of rigid plastic i.e. bottles, paper, cardboard, glass, metal, thermocol, wooden furnitures, plastic bags, take-out food containers, cotton clothes, etc.This is done to reduce the raw materials that would have been used.");
+                   }
+                 }; 
+              
+              });
+              $("#sale").on("change", function() {
+                $("#saleInfo").append('<input type="number" name="contact" value="" placeholder="contact" id="contact"><br><input type="number" name="price" value="" placeholder="price" id="price"><br>')
+              });
+
+
         });
 
 
