@@ -139,13 +139,13 @@
 
                                  <% if(post.use=="1" && post.sale == "0" ) {%>
                                  <i class="fa fa-times fa-3x " style="color:orange;margin-left: 0%"></i>
-                                 <i class="fa fa-user fa-3x " style="color:yellow;margin-left:25%;margin-right: 25%"></i>
+                                 <i class="fa fa-user fa-3x " style="color:black;margin-left:25%;margin-right: 25%"></i>
                                  <%}%>
 
                                   <% if(post.use=="1" && post.sale == "1" ) {%>
                                 <h5>Contact : <span style="text-transform: capitalize;"><%= post.contact%></span></h5>
                                  <i class="fa fa-cart-plus fa-3x " style="color:green;margin-left: 0%"></i>
-                                 <i class="fa fa-user fa-3x " style="color:yellow;margin-left:25%;margin-right: 25%"></i>
+                                 <i class="fa fa-user fa-3x " style="color:black;margin-left:25%;margin-right: 25%"></i>
                                  <%}%>
 
                                 
@@ -172,8 +172,12 @@
                                   <i class="fa fa-exclamation-circle fa-2x " style="color:red;margin-left:20%"></i>
                                  <span>Type of waste: Toxic</span>
                                  <%}%>
-          
-
+                                 <% if(post.waste == "food" ) {%>
+                                  <i class="fa fa-cutlery fa-2x " style="color:yellow;margin-left:20%"></i>
+                                 <span>Type of waste: Toxic</span>
+                                 <%}%>
+              
+  
                                 <a href="/report"><i class="fa fa-2x fa-exclamation-circle" style="float: right;   ;color: red" aria-hidden="true"></i></a>
 
                       </div>
