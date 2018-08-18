@@ -4,6 +4,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var multer = require('multer'); //for image upload
+var serveIndex = require('serve-index'); //for upload of image to local folder
 var body_parser = require('body-parser');
 
 //for mongo connection establishing
