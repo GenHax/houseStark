@@ -6,7 +6,8 @@
 	<style>
 	body{
 		background: linear-gradient(to left, rgba(62, 240, 231, 0.95),
-          #261cbd); 		color: #fff;
+		  #261cbd); 		color: rgb(7, 7, 7);
+		  
 }
 
 	</style>
@@ -21,15 +22,22 @@
 	<div style="margin-left: 10%;margin-right: 10%;" class="leaderbox">
 	<!-- <%=user.length%> -->
 		<table class="table">
-		<h1 style="text-align: center;margin-bottom:-4%"><b>WELCOME TO THE LEADERBOARD</b></h1>
-			<thead class="thead-inverse">
-				<tr style="height: 70px;padding-bottom: 30px">
+		<div class="panel panel-default text-center" style="margin-top: 80px; ">
+		<div class="panel-heading" >	
+		<h1 style="text-align: center;margin-top:30px"><b>WELCOME TO THE LEADERBOARD</b></h1>
+		</div>
+		    <thead class="thead-inverse">
+				<tr style="height: 60px; position:100%">
+				
 					<th><h2>Rank</h2></th>
 					<th><h2>Profile Image</h2></th>
 					<th><h2>Username</h2></th>
 					<th><h2>Reputation</h2></th>
 				</tr>
+				
+			</div>
 			</thead>
+			
 			<tbody>
 <% if(user.length) { %>
 <% for(i=1;i<user.length+1;i++){ use = user[i-1]; %>
@@ -47,6 +55,9 @@
 <%}%>
 
 			</tbody>
+
+        
+		
 		</table>
 	</div>
 
