@@ -21,6 +21,20 @@ var auth = function(req, res, next) {
 router.get('/', auth, function(req, res, next) {
   var ids= new Array(5);
   Post.find({}, function(err, posts) {
+    console.log(posts)
+    var render__data = {
+      posts: posts,
+      current_userid:req.session.userid,
+    }
+    res.render('./pages/timeline', render__data);
+  });
+
+});
+
+router.get('/:wastetype', auth, function(req, res, next) {
+  var ids= new Array(5);
+  Post.find({waste: req.params.wastetype}, function(err, posts) {
+    console.log(posts)
     var render__data = {
       posts: posts,
       current_userid:req.session.userid,

@@ -33,8 +33,6 @@ router.post('/',function(req,res){
 			}
 			else{
 				bcrypt.compare(req.body.password, user.password, function(err, result) {
-						// res == true
-						console.log(result);
 						if(err) console.log(err);
 
 						else if(result) {

@@ -40,6 +40,16 @@
                   Timeline
                 </div>
               </div>
+              <div class="select-wrapper field" style="margin-bottom:15px;">
+                <label for=""></label>Type of waste:</label>
+                  <select name="wastetype" id="wastetype" name="wastetype">
+                    <option value="all">All </option>
+                    <option value="organic">organic </option>
+                    <option value="toxic">toxic</option>
+                    <option value="renewal">renewal</option>
+                    <option value="food">Food</option>
+                  </select>
+              </div>
               <!--/stories-->
               <% if(posts.length) { %>
 
@@ -124,9 +134,9 @@
 
                                 <a href="/report"><i class="fa fa-2x fa-exclamation-circle" style="float: right;   ;color: red" aria-hidden="true"></i></a>
                       
-<%if(current_userid!=post.author){%>
-                       <a href="/report"><i class="fa fa-2x fa-exclamation-circle" title="report" style="float: right;margin-top:2%;color: red" aria-hidden="true"></i></a>
-<%}%>
+              <%if(current_userid!=post.author){%>
+                                     <a href="/report"><i class="fa fa-2x fa-exclamation-circle" title="report" style="float: right;margin-top:2%;color: red" aria-hidden="true"></i></a>
+              <%}%>
 
 
                       </div>
@@ -247,6 +257,12 @@
         solve_id = this.id;
 
       });
+      </script>
+      <script type="text/javascript">
+         $("#wastetype").on("change", function() {
+                console.log($(this).val())
+               location.href= './timeline/'+$(this).val()+'/';
+              });
       </script>
 </body>
 
