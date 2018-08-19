@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
-  <title>Clean India App</title>
+  <title>Waste Management App</title>
   <meta name="generator" content="Bootply" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link href="/css/strap.min.css" rel="stylesheet">
@@ -46,7 +46,7 @@
                     <option value="all">All </option>
                     <option value="organic">organic </option>
                     <option value="toxic">toxic</option>
-                    <option value="renewal">renewal</option>
+                    <option value="renewable">renewal</option>
                     <option value="food">Food</option>
                   </select>
               </div>
@@ -63,7 +63,7 @@
                       <h3><%= post.heading %></h3>
                       <div class="col-md-5 col-sm-12">
                         <a title="Image <%=i%>">
-                        <img class="thumbnail img-responsive" id="image-<%=i%>" src="<%= post.image_before %>">
+                        <img class="thumbnail img-responsive" id="image-<%=i%>" src="http://localhost:3000/<%= post.image_before %>">
                     </a>
                       </div>
                       <div class="col-md-7 col-sm-12">
@@ -86,6 +86,7 @@
                               <h5>LIKES : <small id="like-count<%= post._id %>"><%= post.likes.length %></small><small class="text-muted" style="float:right;"><%= post.date %></small></h5>
                               <% if(post.sale=="1" && post.use == "0") {%>
                                   <h5>Contact : <span style="text-transform: capitalize;"><%= post.contact%></span></h5>
+                                  <h5>Price : <span style="text-transform: capitalize;"><%= post.price%></span></h5>
                                  <i class="fa fa-cart-plus fa-3x " style="color:green;margin-left: 0%"></i>
                                  <i class="fa fa-times fa-3x " style="color:orange;margin-left:25%;margin-right: 25%"></i>
                                  <%}%>
@@ -97,6 +98,7 @@
 
                                   <% if(post.use=="1" && post.sale == "1" ) {%>
                                 <h5>Contact : <span style="text-transform: capitalize;"><%= post.contact%></span></h5>
+                                <h5>Price : <span style="text-transform: capitalize;"><%= post.price%></span></h5>
                                  <i class="fa fa-cart-plus fa-3x " style="color:green;margin-left: 0%"></i>
                                  <i class="fa fa-user fa-3x " style="color:black;margin-left:25%;margin-right: 25%"></i>
                                  <%}%>
@@ -130,9 +132,6 @@
                                   <i class="fa fa-cutlery fa-2x " style="color:yellow;margin-left:20%"></i>
                                  <span>Type of waste: Toxic</span>
                                  <%}%>
-          
-
-                                <a href="/report"><i class="fa fa-2x fa-exclamation-circle" style="float: right;   ;color: red" aria-hidden="true"></i></a>
                       
               <%if(current_userid!=post.author){%>
                                      <a href="/report"><i class="fa fa-2x fa-exclamation-circle" title="report" style="float: right;margin-top:2%;color: red" aria-hidden="true"></i></a>
@@ -150,7 +149,7 @@
 
                     </div>
                     <div class="hidden-sm hidden-xs hidden-md col-lg-1">
-                      <a href="#" class="pull-right proimg"><img src="<%= post.author_image %>" class="img-circle"></a>
+                      <a href="#" class="pull-right proimg"><img src="http://localhost:3000/<%= post.author_image %>" class="img-circle"></a>
                     </div>
 
                   </div>
@@ -166,7 +165,7 @@
                     <%}else{%>
                       <div class="hidden" id="img-repo">
                         <div class="item" id="image-<%=i%>">
-                          <img class="thumb img-responsive" title="Challenge To Clean This" src="<%= post.image_before %>">
+                          <img class="thumb img-responsive" title="Challenge To Clean This" src="http://localhost:3000/<%= post.image_before %>">
                         </div>
                       <%}%>
                         </div>

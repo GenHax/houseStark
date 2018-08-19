@@ -6,6 +6,7 @@ var Post = require('../model/post');
 //create our router object
 var router = express.Router();
 
+
 //export our router
 module.exports = router;
 
